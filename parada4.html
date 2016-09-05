@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Carla</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+    <link rel="stylesheet" href="carla.css" charset="utf-8">
+    <style>
+    #imagemParadas{
+      position: absolute;
+      bottom: 0;
+      width: 70%;
+      left: 10%;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="loader"></div>
+
+    <header>
+      <nav>
+        <ul>
+          <li><a href="parada1.html"></a></li>
+          <li><a href="parada2.html"></a></li>
+          <li><a href="parada3.html"></a></li>
+          <li><a href="parada4.html"></a></li>
+          <li><a href="parada5.html"></a></li>
+          <li><a href="parada6.html"></a></li>
+          <li><a href="parada7.html"></a></li>
+          <li><a href="parada8.html"></a></li>
+          <li><a href="parada9.html"></a></li>
+          <h2>1981_RR Roberto</h2>
+        </ul>
+      </nav>
+    </header>
+
+    <img id="imagemParadas" src="img04.png" alt="" />
+
+    <div id="animado" class="animado" style="position:absolute;">
+      <img src="bike.png" alt="" width="200" />
+    </div>
+
+
+
+    <script type="text/javascript">
+      $(function(){
+      var cores = ['#327E4A','#F3913D','#EF9EC5','#1A7EAA'];
+      var tamanhoArrayCor = cores.length;
+      var contador = 0;
+      setInterval(function(){
+      $("body").css("background-color",cores[contador]);
+      contador++;
+      if(contador>tamanhoArrayCor){
+      contador = 0;
+      }
+    },100);
+      });
+    </script>
+    <!--script type="text/javascript">
+    var contador = 0;
+    var imagens = ["img01.png","img02.png"];
+
+    function rodarImagens() {
+       document.getElementById('imagemParadas').src = imagens[contador++];
+       if (contador >= imagens.length)
+          contador = 0;
+          setTimeout("rodarImagens()", 5000);
+
+    }
+    rodarImagens();
+  </script-->
+    <script type="text/javascript">
+
+    $(function() {
+        w=$(window).width();// aqui eu peguei a largura da janela
+     x= parseInt(w*1.05); // Multipliquei por 1.05 que equivale a 105% da tela
+
+     function loop(){
+       $('#animado')
+       .animate({right:x},0)//Aqui coloquei a div #animado na posi��o x ( ou seja 105% da tela)
+       .animate({right:-2000},10000,loop);//Aqui animei a div com - 2000 para LEFT e chamei o LOOP() onde ir� voltar para a fun��o LOOP
+      }
+      loop(); // Aqui chamei o LOOP() inicial
+
+    });
+    </script>
+    <script type="text/javascript">
+      jQuery(window).load(function() {
+          jQuery("#loader").delay(2000).fadeOut("slow");
+      });
+    </script>
+  </body>
+</html>

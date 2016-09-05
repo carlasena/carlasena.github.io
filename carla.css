@@ -1,0 +1,70 @@
+@import 'https://fonts.googleapis.com/css?family=Merriweather+Sans';
+*{
+  padding: 0;
+  margin: auto;
+}
+#imagemParadas{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+#animado{
+  bottom: -20px;
+}
+#animado img{
+  width: 300px;
+}
+div#loader{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left:0px;
+	background-color: #fff;
+	background-image: url('load.gif');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: auto;
+  z-index: 2;
+}
+body{
+  overflow: hidden;
+  background-color: #a77bae;
+}
+header, header > nav, header > nav  > ul{
+  display: block;
+  height: 40px;
+}
+header {
+  width:100%;
+  position: absolute;
+  top: 10px;
+  z-index: 1;
+}
+header h2{
+  font-family: 'Merriweather Sans', sans-serif, Arial;
+  color:#fff;
+  font-size: 2.1em;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+}
+header nav{
+  width: 270px;
+  float: right;
+}
+header nav > ul{
+  width: 100%;
+  padding: 0;
+}
+header nav > ul li, header nav > ul li a{
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  display: block;
+}
+header nav > ul li{
+  margin-left: 5px;
+  display: inline-block;
+}
